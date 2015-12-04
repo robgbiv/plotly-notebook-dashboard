@@ -27,9 +27,6 @@ def create(graph_urls, columns):
         }
     }
 
-    if dashboard_title != None:
-        dashboard_json[0]["rows"]["banner"]["title"] = dashboard_title
-
     response = requests.post('http://dashboards.ly/publish',
                              data={'dashboard': json.dumps(dashboard_json)},
                              headers={'content-type': 'application/x-www-form-urlencoded'})
